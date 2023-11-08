@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".OnboardActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="363dp"
+        android:layout_height="340dp"
+        app:layout_constraintBottom_toBottomOf="@+id/elevatedButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.102"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="380dp"
+        android:layout_height="291dp"
+        android:layout_marginTop="452dp"
+        android:fontFamily="monospace"
+        android:text="Локальный музыкальный чат и ничего лишнего. Начни общение прямо сейчас и обратно дороги не будет!"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#FD7F2B"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/elevatedButton"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="363dp"
+        android:layout_height="102dp"
+        android:layout_marginBottom="44dp"
+        android:backgroundTint="#FF6F00"
+        android:fontFamily="@font/alata"
+        android:onClick="logIn"
+        android:text="Начать"
+        android:textColor="#000000"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
