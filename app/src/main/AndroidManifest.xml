@@ -11,17 +11,9 @@
         android:theme="@style/Theme.Material3.DayNight.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".HomeActivity"
-            android:exported="false"
-            android:screenOrientation="fullSensor" />
-        <activity
-            android:name=".SignInActivity"
-            android:exported="false"
-            android:screenOrientation="fullSensor" />
-        <activity
-            android:name=".OnboardActivity"
+            android:name=".MainActivity"
             android:exported="true"
-            android:screenOrientation="fullSensor">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
