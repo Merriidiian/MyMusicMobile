@@ -2,14 +2,19 @@ package com.example.mymusicchat
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class HomeActivity : AppCompatActivity() {
     private val TAG : String = "HomeActivity"
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+        var nameText = findViewById<TextView>(R.id.textView)
+        val name = intent.getStringExtra("name")
+        nameText.setText(name)
+
         Log.d(TAG, "onCreate")
     }
 

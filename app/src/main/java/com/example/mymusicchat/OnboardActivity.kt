@@ -6,7 +6,9 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 
+
 class OnboardActivity : AppCompatActivity() {
+
     private val TAG : String = "OnboardActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {

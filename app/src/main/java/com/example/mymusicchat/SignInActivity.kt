@@ -7,24 +7,30 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.chatapp.Service.isValidEmail
-import com.example.chatapp.Service.isValidPassword
+import com.example.mymusicchat.Service.isValidEmail
+import com.example.mymusicchat.Service.isValidPassword
+import com.example.mymusicchat.Service.User
 
 class SignInActivity : AppCompatActivity() {
-    private val TAG : String = "SignInActivity"
+    private val TAG: String = "SignInActivity"
+    private var userName: String? = "Сердюков Илья"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
 
-        var emailText = findViewById(R.id.emailText) as EditText
-        var passwordText = findViewById(R.id.passwordText) as EditText
+        var emailText = findViewById<EditText>(R.id.emailText)
+        var passwordText = findViewById<EditText>(R.id.passwordText)
 
-        val email = intent.getStringExtra("email")
-        val password = intent.getStringExtra("password")
+        val user: User? = intent.getParcelableExtra("user")
 
-        emailText.setText(email)
-        passwordText.setText(password)
+        if (user != null) {
+            emailText.setText(user.email)
+            passwordText.setText(user.password)
+            userName = user.name
+
+            Toast.makeText(this, "${user.name} зарегестрирован", Toast.LENGTH_SHORT).show();
+        }
 
         Log.d(TAG, "onCreate")
     }
@@ -66,11 +72,16 @@ class SignInActivity : AppCompatActivity() {
             Toast.makeText(this, "Введите корректный Email", Toast.LENGTH_SHORT).show();
         } else if (!passwordText.text.isValidPassword()) {
             Toast.makeText(this, "Введите корректный пароль", Toast.LENGTH_SHORT).show();
-        }
-        else {
+        } else {
             val intent = Intent(this, HomeActivity::class.java)
+            intent.putExtra("name", userName);
             startActivity(intent)
         }
     }
 
+    fun signUp(view: View?) {
+
+        val intent = Intent(this, SignUpActivity::class.java)
+        startActivity(intent)
+    }
 }
